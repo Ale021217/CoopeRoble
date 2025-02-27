@@ -1,0 +1,160 @@
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* Estilos del header */
+.bg-purple {
+  background-color: #281966; /* Morado oscuro */
+}
+
+header {
+
+ height: 80px;
+  
+}
+
+.text-white {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+/* Estilo del footer */
+.footer {
+  background-color: #281966;  /* El mismo tono de morado que el header */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  height: 40px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Campo de filtro */
+.filter-field {
+  width: 100%;
+  margin-top: 60px; /* Ajustado para el nuevo tamaño del header */
+  margin-bottom: 20px;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Estilo de la imagen */
+.report-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Estilo cuando no hay foto */
+.no-photo {
+  color: #9e9e9e;
+  font-style: italic;
+}
+
+/* Botones de acción */
+.action-button {
+  margin-right: 10px;
+}
+
+/* Encabezado de acciones */
+.actions-header {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Celda de acciones */
+.actions-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Paginador personalizado */
+.custom-paginator {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Aseguramos que la tabla sea más equilibrada */
+.mat-column-fecha, .mat-column-unidad, .mat-column-tipoAveria, .mat-column-descripcion, .mat-column-foto, .mat-column-acciones {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Estilo global para la modal */
+/* Estilo global para la modal */
+.mat-dialog-container {
+  width: 80% !important;
+  height: 70% !important;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 20px; /* Añade espacio alrededor de la modal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Para posicionamiento absoluto de los elementos dentro */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado exacto */
+}
+
+/* Estilos para el contenido de la modal */
+.mat-dialog-content {
+  padding: 20px; /* Añade espacio interno alrededor del contenido */
+  overflow-y: auto; /* Asegura que el contenido sea desplazable si es necesario */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centra el contenido dentro */
+}
+
+/* Estilo para los elementos dentro de la modal */
+.mat-dialog-title {
+  margin-bottom: 20px;
+  text-align: end; /* Añade espacio debajo del título */
+}
+
+.mat-dialog-actions {
+  margin-top: 20px; /* Añade espacio encima de los botones */
+  padding-top: 10px; /* Espacio adicional en la parte superior */
+  display: flex;
+  justify-content: flex-end; /* Para alinear el botón de cerrar a la derecha */
+}
+
+/* Ajuste para el párrafo de la imagen */
+.mat-dialog-content p {
+  margin-bottom: 15px; /* Separación entre los párrafos */
+  text-align: center; /* Centra los textos */
+}
+
+/* Si los elementos de la imagen necesitan más espacio */
+.mat-dialog-content img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reporte de Avería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="bg-purple py-4">
+        <div class="container">
+            <h1 class="text-white text-center mb-0">🚀 Generar Reporte  🛠️</h1>
+        </div>
+    </header>
+
+    <!-- Formulario de Reporte -->
+    <div class="container d-flex justify-content-center align-items-center my-5">
+        <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%; border-radius: 15px;">
+            <h2 class="text-center mb-4">Reporte de Avería</h2>
+            <form>
+                <!-- Fecha -->
+                <div class="mb-4">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" id="fecha" class="form-control" required>
+                </div>
+
+                <!-- Unidad -->
+                <div class="mb-4">
+                    <label for="unidad" class="form-label">Unidad</label>
+                    <input type="text" id="unidad" class="form-control" placeholder="Número o nombre de la unidad" required>
+                </div>
+
+                <!-- Tipo de Avería -->
+                <!-- Tipo de Avería -->
+<div class="mb-4">
+    <label for="tipoAveria" class="form-label">Tipo de Avería</label>
+    <select id="tipoAveria" class="form-select" required>
+        <option value="" disabled selected>Seleccione un tipo de avería</option>
+        <option value="mecanica">Avería Mecánica</option>
+        <option value="electrica">Avería Eléctrica</option>
+        <option value="hidraulica">Avería Hidráulica</option>
+    </select>
+</div>
+
+
+                <!-- Descripción de la Avería -->
+                <div class="mb-4">
+                    <label for="descripcion" class="form-label">Descripción de la Avería</label>
+                    <textarea id="descripcion" class="form-control" rows="4" placeholder="Descripción detallada del problema..." required></textarea>
+                </div>
+
+                <!-- Foto -->
+                <div class="mb-4">
+                    <label for="foto" class="form-label">Adjuntar Foto (opcional)</label>
+                    <input type="file" id="foto" class="form-control" accept="image/*">
+                    <small class="form-text text-muted">Puedes adjuntar una imagen de la avería (opcional).</small>
+                </div>
+
+                <!-- Botón Enviar -->
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary px-4 py-2">Enviar Reporte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer mt-5">
+        <p>&copy; 2025 Sistema de Reportes</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* Personalización adicional para el diseño */
+body {
+  background-color: #FEFEFE;  /* Blanco suave */
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Color principal morado */
+.bg-purple {
+  background-color: #281966;  /* Morado oscuro */
+}
+
+body .container {
+  flex: 1;
+}
+
+.welcome-message {
+  color: #281966;  /* Morado oscuro */
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.button {
+  background: #c47a52;  /* Naranja cálido */
+  border: none; /* Elimina cualquier borde */
+  border-radius: 8px;
+  padding: 20px 30px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Pie de página */
+.footer {
+  background-color: #281966;  /* Morado oscuro */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Estilos del encabezado */
+header {
+  background-color: #281966;  /* Morado oscuro */
+}
+
+h1 {
+  font-size: 32px;
+  color: #FEFEFE;  /* Blanco */
+}
