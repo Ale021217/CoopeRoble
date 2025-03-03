@@ -1,54 +1,91 @@
-/* Fondo suave y limpia la estructura básica */
-body {
-    background-color: #f0f2f5;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-}
-
-/* Header con el mismo morado */
-.bg-purple {
-    background-color: #281966; /* Aquí el morado más oscuro */
-}
-
-/* Estilo para los campos de entrada (texto, área de texto, etc.) */
-.form-control {
-    border-radius: 8px;
+/* Contenedor del formulario */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
     border: 1px solid #ddd;
-    padding: 12px;
-    font-size: 1rem;
-    background-color: #fafafa;
-}
-
-/* Estilo para el botón */
-.btn-primary {
-    background-color: #c47a52;
-    border-color: #c47a52;
-    border-radius: 8px;
-    font-size: 1rem;
-    padding: 12px 25px;
-    transition: background-color 0.3s ease;
-}
-
-/* Efecto hover para el botón */
-.btn-primary:hover {
-    background-color: #c47a52;
-    border-color: #c47a52;
-}
-
-/* Pie de página con el mismo morado */
-.footer {
-    background-color: #281966  ; /* El mismo tono de morado que el header */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 30px;
-}
-
-header {
-    background-color: #281966;  /* Morado oscuro */
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
   }
   
-
-.footer p {
-    margin: 0;
-}
+  /* Título del formulario */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Espaciado entre campos */
+  div {
+    margin-bottom: 15px;
+  }
+  
+  /* Etiquetas */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Inputs, select y textarea */
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Efecto de foco */
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  /* Botón de envío */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #a6c8ff;
+    cursor: not-allowed;
+  }
+  
+  /* Mensajes de validación */
+  small {
+    color: #d9534f;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  /* Mensajes de resultado */
+  p.success {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  p.error {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: red;
+  }
+  

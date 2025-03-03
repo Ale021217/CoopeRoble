@@ -3,9 +3,8 @@ import { body, validationResult } from 'express-validator';
 
 // Función para crear un nuevo reporte
 export const createReporte = [
-  // Validaciones
+  // Validaciones (sin validar fecha_reporte)
   body('id_usuario').isInt().withMessage('El ID de usuario debe ser un número válido.'),
-  body('fecha_reporte').isDate().withMessage('La fecha del reporte debe ser válida.'),
   body('unidad').isInt().withMessage('La unidad debe ser un número válido.'),
   body('imagen_averia').optional().isURL().withMessage('La imagen de la avería debe ser una URL válida si se proporciona.'),
   body('tipo_averia').notEmpty().withMessage('El tipo de avería es obligatorio.'),
@@ -17,10 +16,17 @@ export const createReporte = [
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado } = req.body;
+    // Extraemos los campos; omitimos fecha_reporte para que la BD asigne la fecha actual
+    const { id_usuario, unidad, imagen_averia, tipo_averia, estado } = req.body;
 
     try {
-      const result = await reporteModel.createReporte({ id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado });
+      const result = await reporteModel.createReporte({
+        id_usuario,
+        unidad,
+        imagen_averia,
+        tipo_averia,
+        estado
+      });
       res.status(201).json({ message: 'Reporte creado exitosamente.' });
     } catch (error) {
       console.error(error);
@@ -31,9 +37,8 @@ export const createReporte = [
 
 // Función para actualizar un reporte por ID
 export const updateReporte = [
-  // Validaciones
+  // Validaciones (sin validar fecha_reporte)
   body('id_usuario').isInt().withMessage('El ID de usuario debe ser un número válido.'),
-  body('fecha_reporte').isDate().withMessage('La fecha del reporte debe ser válida.'),
   body('unidad').isInt().withMessage('La unidad debe ser un número válido.'),
   body('imagen_averia').optional().isURL().withMessage('La imagen de la avería debe ser una URL válida si se proporciona.'),
   body('tipo_averia').notEmpty().withMessage('El tipo de avería es obligatorio.'),
@@ -46,10 +51,17 @@ export const updateReporte = [
     }
 
     const { id_reporte } = req.params;
-    const { id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado } = req.body;
+    // Se omite fecha_reporte en la actualización para conservar la fecha original
+    const { id_usuario, unidad, imagen_averia, tipo_averia, estado } = req.body;
 
     try {
-      const result = await reporteModel.updateReporte(id_reporte, { id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado });
+      const result = await reporteModel.updateReporte(id_reporte, {
+        id_usuario,
+        unidad,
+        imagen_averia,
+        tipo_averia,
+        estado
+      });
       if (result.affectedRows === 0) {
         return res.status(404).json({ message: 'Reporte no encontrado.' });
       }

@@ -1,3 +1,4 @@
+// src/app/app.config.ts
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter, withInMemoryScrolling, withComponentInputBinding } from '@angular/router';
 import { routes } from './app.routes';

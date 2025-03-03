@@ -1,23 +1,22 @@
-// src/models/reporteModel.js
 import pool from '../config/db.js';
 
-export const createReporte = async ({ id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado }) => {
+export const createReporte = async ({ id_usuario, unidad, imagen_averia, tipo_averia, estado }) => {
   const query = `
-    INSERT INTO Reporte (id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO Reporte (id_usuario, unidad, imagen_averia, tipo_averia, estado)
+    VALUES (?, ?, ?, ?, ?)
   `;
-  const values = [id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado];
+  const values = [id_usuario, unidad, imagen_averia, tipo_averia, estado];
   const [result] = await pool.query(query, values);
   return result;
 };
 
-export const updateReporte = async (id_reporte, { id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado }) => {
+export const updateReporte = async (id_reporte, { id_usuario, unidad, imagen_averia, tipo_averia, estado }) => {
   const query = `
     UPDATE Reporte
-    SET id_usuario = ?, fecha_reporte = ?, unidad = ?, imagen_averia = ?, tipo_averia = ?, estado = ?
+    SET id_usuario = ?, unidad = ?, imagen_averia = ?, tipo_averia = ?, estado = ?
     WHERE id_reporte = ?
   `;
-  const values = [id_usuario, fecha_reporte, unidad, imagen_averia, tipo_averia, estado, id_reporte];
+  const values = [id_usuario, unidad, imagen_averia, tipo_averia, estado, id_reporte];
   const [result] = await pool.query(query, values);
   return result;
 };
