@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ReporteService } from '../../../services/reporte.service';
+import { ReporteService } from '../../core/services/reporte.service';
 
 // Interfaz para la avería
 interface Averia {
